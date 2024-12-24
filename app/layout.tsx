@@ -6,14 +6,18 @@ export const metadata = {
     description: 'Find the perfect rental property, buy or sell your home, or invest in real estate with Property Pulse. We are your property marketplace for all things real estate.'
 };
 
-const MainLayout = ({ children }) => {
-    return ( <html>
-        <body>
-            <main>
-                { children}
-            </main>
-        </body>
-    </html> );
+import { ReactNode } from 'react';
+
+const MainLayout = ({ children }: { children: ReactNode }) => {
+    return (
+        <html lang="en">
+            <body className="custom-body-class">
+                <main>
+                    {children}
+                </main>
+            </body>
+        </html>
+    );
 }
  
 export default MainLayout;
