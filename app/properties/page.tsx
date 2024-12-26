@@ -1,4 +1,5 @@
 const PropertiesPage = () => {
+    
     return ( <div>Properties Page</div> );
 }
  
