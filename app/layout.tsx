@@ -1,3 +1,4 @@
+import Navbar from '@/components/Navbar';
 import '@/assets/styles/globals.css';
 
 export const metadata = {
@@ -11,7 +12,8 @@ import { ReactNode } from 'react';
 const MainLayout = ({ children }: { children: ReactNode }) => {
     return (
         <html lang="en">
-            <body className="custom-body-class">
+            <body>
+                <Navbar />
                 <main>
                     {children}
                 </main>

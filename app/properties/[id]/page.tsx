@@ -1,19 +1,29 @@
-'use client';
-import { useRouter, useParams, useSearchParams, usePathname } from 'next/navigation';
 
+interface PropertyPageProps {
+    params: {
+        id: string;
+    };
+    searchParams: {
+        [key: string]: string;
+    };
+}
 
-const PropertyPage = () => {
-    const router = useRouter();
-    const params = useParams();
-    const searchParams = useSearchParams();
-    const pathname = usePathname();
-
-    return <div>
-        Property Page: You are on page {params.id} <br/>
-        { searchParams.get('name')}
-        <br/>
-        You are on this path: {pathname}
-        </div>;
+const PropertyPage = ({ params, searchParams }: PropertyPageProps) => {
+    return (
+        <div>
+            Property Page {params.id}
+            <div>
+                Search Parameters:
+                <ul>
+                    {Object.entries(searchParams).map(([key,value]) => (
+                        <li key={key}>
+                            {key}: {value}
+                        </li>
+                    ))}
+                </ul>
+            </div>
+        </div>
+    );
 };
  
 export default PropertyPage;
